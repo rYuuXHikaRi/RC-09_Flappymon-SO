@@ -1,13 +1,7 @@
-from cgi import test
-from turtle import delay
 import pygame, random
 from pygame.locals import *
 from abc import ABC, abstractmethod
 from os import path
-
-from scipy import rand
-
-
 
 # Environment Setting
 # Sebagai "Canvas" game
@@ -41,13 +35,13 @@ HS=1
 fntGame = "Assets/font/FlappyBirdy.ttf"
 
 # Music
-bgm = "Assets/sound/Game-Menu.wav"
-tap = "Assets/sound/fly.wav"
-die = "Assets/sound/die.wav"
-skillActive = "Assets/sound/powerup.wav"
-bgmStageGame = ["Assets/sound/BG-twilight.wav",
-                "Assets/sound/BG-Hellzone.wav",
-                "Assets/sound/BG-iceage.wav"]
+#bgm = "Assets/sound/Game-Menu.wav"
+#tap = "Assets/sound/fly.wav"
+#die = "Assets/sound/die.wav"
+#skillActive = "Assets/sound/powerup.wav"
+#bgmStageGame = ["Assets/sound/BG-twilight.wav",
+#                "Assets/sound/BG-Hellzone.wav",
+#                "Assets/sound/BG-iceage.wav"]
 # Image Resource
 bgGameSprites = ["Assets/img/bg-twill.png",
                  "Assets/img/bg-lava.png",
@@ -514,11 +508,11 @@ while isGameRun :
         pygame.display.update()
 
     #mixer.music.stop()
-    for i in range(len(bgmStageGame)) :
-        if(i == int(charSelect.getID()) - 1) :
-            #mixer.music.load(bgmStageGame[i])
-            #mixer.music.play(-1)
-            break
+    #for i in range(len(bgmStageGame)) :
+    #    if(i == int(charSelect.getID()) - 1) :
+    #        #mixer.music.load(bgmStageGame[i])
+    #        #mixer.music.play(-1)
+    #        break
     while(gameState == "playGame") :
         clock.tick(FPS)
         
