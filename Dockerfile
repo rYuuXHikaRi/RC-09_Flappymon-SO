@@ -12,7 +12,9 @@ COPY requirements.txt .
 COPY Assets .
 COPY Highscore.txt .
 RUN apt update
-RUN apt install -y python3-pip python3-tk
+RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+RUN DEBIAN_FRONTEND=noninteractive apt install -y tzdata
+RUN apt install -y libsdl2-2.0-0 python3-pip python3-tk
 RUN pip3 install -r requirements.txt
 
 ENV DISPLAY=host.docker.internal:0.0
