@@ -1,8 +1,6 @@
 from cgi import test
 from turtle import delay
 import pygame, random
-
-from pygame import mixer
 from pygame.locals import *
 from abc import ABC, abstractmethod
 from os import path
@@ -80,7 +78,7 @@ transparentBg = pygame.transform.scale(transparentBg, (windowW, windowH))
 pygame.init()
 
 font = pygame.font.SysFont(fntGame,45)
-white=(0,0,0 )
+white=(0,0,0)
 screen = pygame.display.set_mode((windowW, windowH))
 pygame.display.set_caption("FlappyMon - 0.2.6-Alpha")
 clock = pygame.time.Clock()
@@ -151,8 +149,8 @@ class poke1(character) :
                 and pokeObject.sprites()[0].rect.right<pipe_group.sprites()[0].rect.right\
                     and Pos_Detection==False:
                         Pos_Detection=True
-                        self.sound = mixer.Sound(skillActive)
-                        self.sound.play()
+                        #self.sound = mixer.Sound(skillActive)
+                        #self.sound.play()
             if Pos_Detection== True: 
                 if pokeObject.sprites()[0].rect.left < pipe_group.sprites()[0].rect.right:
                     self.__hp+=1
@@ -186,8 +184,8 @@ class poke2(character) :
     def castSkill(self) :
         if self.score%10==0 and self.score>0:
             self.skill=True
-            self.sound = mixer.Sound(skillActive)
-            self.sound.play()
+            #self.sound = mixer.Sound(skillActive)
+            #self.sound.play()
         elif((self.score-6)%10==0):
             self.skill=False
         if self.skill==True:
@@ -223,8 +221,8 @@ class poke3(character) :
         if self.score%10==0 and self.score>0 :
             self.skill=True
             self.last_hp=self.__hp
-            self.sound = mixer.Sound(skillActive)
-            self.sound.play()
+            #self.sound = mixer.Sound(skillActive)
+            #self.sound.play()
         elif((self.score-6)%10==0 and self.score>10):
             self.skill=False
         if self.skill==True:
@@ -345,8 +343,8 @@ after_collide = False
 after_collide_interval = 4
 
 # Play BGM Music
-mixer.music.load(bgm)
-mixer.music.play(-1)
+#mixer.music.load(bgm)
+#mixer.music.play(-1)
 
 
 
@@ -516,11 +514,11 @@ while isGameRun :
             
         pygame.display.update()
 
-    mixer.music.stop()
+    #mixer.music.stop()
     for i in range(len(bgmStageGame)) :
         if(i == int(charSelect.getID()) - 1) :
-            mixer.music.load(bgmStageGame[i])
-            mixer.music.play(-1)
+            #mixer.music.load(bgmStageGame[i])
+            #mixer.music.play(-1)
             break
     while(gameState == "playGame") :
         clock.tick(FPS)
@@ -533,15 +531,15 @@ while isGameRun :
             if(event.type == KEYDOWN) :
                 if(event.key == K_SPACE or event.key == K_UP) :
                     charSelect.moveUp()
-                    tap_sound = mixer.Sound(tap)
-                    tap_sound.play()
+                    #tap_sound = mixer.Sound(tap)
+                    #tap_sound.play()
                 elif event.key == pygame.K_p:
                     #pause()
                     gameState = "pauseGame"
             if(event.type == pygame.MOUSEBUTTONDOWN) :
                 charSelect.moveUp()
-                tap_sound = mixer.Sound(tap)
-                tap_sound.play()
+                #tap_sound = mixer.Sound(tap)
+                #tap_sound.play()
 
         if(charSelect.getHP() == 3) :
             hpImg = pygame.image.load(hpSprites[2])
@@ -592,8 +590,8 @@ while isGameRun :
         pygame.display.flip()
         if(pygame.sprite.groupcollide(pokeObject, ground_group, False,False, pygame.sprite.collide_mask)) :
             if(charSelect.getHP() == 0) :
-                die_sound = mixer.Sound(die)
-                die_sound.play()  
+                #die_sound = mixer.Sound(die)
+                #die_sound.play()  
                 gameState = "gameOver"
             
             charSelect.drownHP()
@@ -604,8 +602,8 @@ while isGameRun :
 
         if (pygame.sprite.groupcollide(pokeObject, pipe_group, False, False, pygame.sprite.collide_mask)):
             if(charSelect.getHP() <= 0) :
-                die_sound = mixer.Sound(die)
-                die_sound.play()  
+                #die_sound = mixer.Sound(die)
+                #die_sound.play()  
                 gameState = "gameOver"
         
             if(after_collide) :
@@ -641,7 +639,7 @@ while isGameRun :
 
         clock.tick(5)
 
-    mixer.music.stop()
+    #mixer.music.stop()
     while(gameState == "gameOver") :
         screen.fill((0,0,0))
         show_text("Game Over",40,(255, 0, 0),windowW//2 - 65,windowH//4)
