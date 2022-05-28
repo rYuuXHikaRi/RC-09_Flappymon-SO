@@ -27,7 +27,7 @@ Silahkan clone repositori ini [disini](https://github.com/rYuuXHikaRi/RC-09_Flap
 1. Download dan Install x server untuk windows [disini](https://sourceforge.net/projects/vcxsrv/files/latest/download).
 
 2. Buka X launch.
-3. Buka script [ini] lalu, simpan dengan nama config.xlaunch.
+3. Buka script [ini](https://raw.githubusercontent.com/rYuuXHikaRi/RC-09_Flappymon-SO/main/resource/config.xlaunch) lalu, simpan dengan nama config.xlaunch.
 4. Buka file config tersebut menggunakan X Launch
 
 ## Build Docker
