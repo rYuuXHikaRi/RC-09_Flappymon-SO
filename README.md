@@ -4,7 +4,7 @@
 >  Sebuah project tugas besar dari mata kuliah PBO, untuk membuat game. Kami persembahkan FlappyMon ^_^
 >  Sekarang tersedia dalam bentuk docker ^_^
 
-<div>
+</div>
 
 ## Nama dan NIM Anggota Kelompok
 | Nama | NIM |
